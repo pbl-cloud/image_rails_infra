@@ -1,6 +1,6 @@
 #
 # Cookbook Name::image_rails
-# Recipe:: users
+# Recipe:: webapp_users
 #
 
 image_rails = node['image_rails']
