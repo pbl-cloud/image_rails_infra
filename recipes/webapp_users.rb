@@ -27,7 +27,8 @@ cookbook_file "#{image_rails['home']}/.profile" do
   mode 0644
   owner image_rails['user']
   group image_rails['group']
-  action :create_if_missing
+  action :nothing
+  subscribes :create, "user[#{image_rails['user']}]"
 end
 
 directory "#{image_rails['home']}/.profile.d" do

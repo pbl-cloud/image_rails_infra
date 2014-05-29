@@ -14,3 +14,7 @@ suites:
   - name: app_server
     run_list:
       - recipe[image_rails::app_server]
+    attributes:
+      image_rails:
+        db:
+          host: 192.168.1.8

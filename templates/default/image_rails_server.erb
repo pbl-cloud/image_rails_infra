@@ -13,7 +13,7 @@ server {
 
 
   server_name <%= @server['name'] %>;
-  root <%= @app_path %>;
+  root <%= @app_path %>/current/public;
 
   location / {
     proxy_pass http://image_rails;

@@ -9,12 +9,14 @@ image_rails = node['image_rails']
 
 config_directory = "#{image_rails['app_dir']}/shared/config"
 
-directory "#{config_directory}" do
-  recursive true
-  action :create
-  owner image_rails['user']
-  group image_rails['group']
-  mode "0755"
+[image_rails['app_dir'], "#{image_rails['app_dir']}/shared", config_directory].each do |dir|
+  directory dir do
+    recursive true
+    action :create
+    owner image_rails['user']
+    group image_rails['group']
+    mode "0755"
+  end
 end
 
 template "database config" do

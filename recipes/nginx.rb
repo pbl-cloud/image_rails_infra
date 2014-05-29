@@ -15,10 +15,6 @@ image_rails = node['image_rails']
   end
 end
 
-cookbook_file "mime.types" do
-  path "/etc/nginx/mime.types"
-end
-
 template "image_rails server" do
   path "/etc/nginx/sites-available/image_rails"
   source "image_rails_server.erb"
