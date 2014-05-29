@@ -37,3 +37,5 @@ directory "#{image_rails['home']}/.profile.d" do
   action :create
   not_if { ::File.exists?("#{image_rails['home']}/.profile.d") }
 end
+
+include_recipe "ssh-keys"

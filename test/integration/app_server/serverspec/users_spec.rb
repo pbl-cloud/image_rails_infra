@@ -17,4 +17,9 @@ describe "Users" do
     it { should be_file }
     it { should contain '$HOME/.profile.d'}
   end
+
+  describe file('/home/image_rails/.ssh/authorized_keys') do
+    it { should be_file }
+    it { should contain 'daniel'}
+  end
 end

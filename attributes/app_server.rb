@@ -37,3 +37,7 @@ default['image_rails']['home'] = "/home/image_rails"
 opencv_version = "2.4.9"
 default['image_rails']['opencv_version'] = opencv_version
 default['image_rails']['opencv_url'] = "http://downloads.sourceforge.net/project/opencvlibrary/opencv-unix/#{opencv_version}/opencv-#{opencv_version}.zip"
+
+default[:ssh_keys] = {
+  "image_rails" => ["daniel"]
+}
