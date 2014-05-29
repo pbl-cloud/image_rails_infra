@@ -36,6 +36,8 @@ default['image_rails']['user_uid'] = nil
 default['image_rails']['user_gid'] = nil
 default['image_rails']['home'] = "/home/image_rails"
 
+default['image_rails']['app_dir'] = "/home/image_rails/image_rails"
+
 opencv_version = "2.4.9"
 default['image_rails']['opencv_version'] = opencv_version
 default['image_rails']['opencv_url'] = "http://downloads.sourceforge.net/project/opencvlibrary/opencv-unix/#{opencv_version}/opencv-#{opencv_version}.zip"
@@ -67,4 +69,12 @@ default['image_rails']['db'] = {
 default['image_rails']['apis'] = {
   'twitter'    => Chef::EncryptedDataBagItem.load("api_keys", "twitter", secret),
   'cloudinary' => Chef::EncryptedDataBagItem.load("api_keys", "cloudinary", secret)
+}
+
+default['nginx']['default_site_enabled'] = false
+
+default['image_rails']['server'] = {
+  ssl: false,
+  name: 'localhost',
+  socket_path: "#{default['image_rails']['app_dir']}/shared/tmp/sockets/puma.sock"
 }

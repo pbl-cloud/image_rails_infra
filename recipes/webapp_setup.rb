@@ -16,8 +16,7 @@ magic_shell_environment 'SECRET_KEY_BASE' do
   not_if { ::File.exists?("#{image_rails['home']}/.profile.d/SECRET_KEY_BASE.sh") }
 end
 
-base_directory = "#{image_rails['home']}/image_rails"
-config_directory = "#{image_rails['home']}/image_rails/shared/config"
+config_directory = "#{image_rails['app_dir']}/shared/config"
 
 directory "#{config_directory}" do
   recursive true

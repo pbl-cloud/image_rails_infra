@@ -12,3 +12,5 @@ include_recipe "image_rails::opencv"
 include_recipe "image_rails::webapp_users"
 
 include_recipe "image_rails::webapp_setup"
+
+include_recipe "image_rails::nginx"
