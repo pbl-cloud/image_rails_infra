@@ -47,6 +47,7 @@ file archive_path do
 end
 
 directory source_path do
+  recursive true
   action :nothing
   subscribes :delete, "execute[opencv cmake]"
 end

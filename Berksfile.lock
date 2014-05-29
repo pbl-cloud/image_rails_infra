@@ -5,6 +5,9 @@ DEPENDENCIES
   locale
     git: https://github.com/hw-cookbooks/locale.git
     revision: aa46ee2b7f810378a99f3244b48c51e2c814a43f
+  magic_shell
+    git: https://github.com/customink-webops/magic_shell.git
+    revision: 5d643032a0e0b6b1e0449efb4e2856922aa1bf45
 
 GRAPH
   apt (2.4.0)
@@ -15,6 +18,6 @@ GRAPH
     ruby_build (>= 0.0.0)
     timezone-ii (>= 0.0.0)
   locale (1.0.1)
-  magic_shell (1.0.0)
+  magic_shell (1.0.1)
   ruby_build (0.8.0)
   timezone-ii (0.2.0)

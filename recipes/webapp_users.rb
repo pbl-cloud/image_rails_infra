@@ -21,3 +21,19 @@ end
 user image_rails['user'] do
   action :lock
 end
+
+cookbook_file "#{image_rails['home']}/.profile" do
+  source "profile"
+  mode 0644
+  owner image_rails['user']
+  group image_rails['group']
+  action :create_if_missing
+end
+
+directory "#{image_rails['home']}/.profile.d" do
+  mode 0755
+  owner image_rails['user']
+  group image_rails['group']
+  action :create
+  not_if { ::File.exists?("#{image_rails['home']}/.profile.d") }
+end

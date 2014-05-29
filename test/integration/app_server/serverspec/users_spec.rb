@@ -12,4 +12,9 @@ describe "Users" do
     it { should be_directory }
     it { should be_owned_by 'image_rails' }
   end
+
+  describe file('/home/image_rails/.profile') do
+    it { should be_file }
+    it { should contain '$HOME/.profile.d'}
+  end
 end
