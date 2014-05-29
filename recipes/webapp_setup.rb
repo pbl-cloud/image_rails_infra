@@ -7,15 +7,6 @@ require 'securerandom'
 
 image_rails = node['image_rails']
 
-magic_shell_environment 'SECRET_KEY_BASE' do
-  value SecureRandom.hex(50)
-  owner image_rails['user']
-  group image_rails['group']
-  mode "0600"
-  destination "#{image_rails['home']}/.profile.d"
-  not_if { ::File.exists?("#{image_rails['home']}/.profile.d/SECRET_KEY_BASE.sh") }
-end
-
 config_directory = "#{image_rails['app_dir']}/shared/config"
 
 directory "#{config_directory}" do
@@ -31,6 +22,13 @@ template "database config" do
   source "database.yml.erb"
   action :create_if_missing
   variables db: image_rails['db']
+end
+
+template "database config" do
+  path "#{config_directory}/secrets.yml"
+  source "secrets.yml.erb"
+  action :create_if_missing
+  variables secret_key: SecureRandom.hex(50)
 end
 
 template "local config" do
