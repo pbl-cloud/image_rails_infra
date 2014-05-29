@@ -3,13 +3,12 @@ driver:
   name: vagrant
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
 
 platforms:
   - name: ubuntu-12.04
 
 suites:
-  - name: default
+  - name: app_server
     run_list:
-      - recipe[image_rails::default]
-    attributes:
+      - recipe[image_rails::app_server]

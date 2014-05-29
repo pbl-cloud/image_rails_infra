@@ -170,5 +170,6 @@ PLATFORMS
 DEPENDENCIES
   berkshelf
   chef
+  chef-zero
   serverspec
   test-kitchen
