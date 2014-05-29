@@ -23,6 +23,8 @@ override['image_rails']['packages'] = %w{
   subversion
   unzip
   cmake
+  libmysql-ruby
+  libmysqlclient-dev
 }
 
 default['image_rails']['ruby'] = "2.1.1"
@@ -40,4 +42,29 @@ default['image_rails']['opencv_url'] = "http://downloads.sourceforge.net/project
 
 default[:ssh_keys] = {
   "image_rails" => ["daniel"]
+}
+
+default['image_rails']['secret_path'] = "/etc/chef/data_bag_key"
+
+db_user = "image_rails"
+
+secret = Chef::EncryptedDataBagItem.load_secret("#{node['image_rails']['secret_path']}")
+
+db_creds  = Chef::EncryptedDataBagItem.load("database_users", db_user, secret)
+
+default['image_rails']['db'] = {
+  "adapter"  => "mysql2",
+  "encoding" => "utf8",
+  "username" => db_user,
+  "password" => db_creds["password"],
+  "database" => "image_rails_production",
+  "host"     => "localhost",
+  "port"     => 3306,
+  "pool"     => 5,
+  "timeout"  => 5000
+}
+
+default['image_rails']['apis'] = {
+  'twitter'    => Chef::EncryptedDataBagItem.load("api_keys", "twitter", secret),
+  'cloudinary' => Chef::EncryptedDataBagItem.load("api_keys", "cloudinary", secret)
 }

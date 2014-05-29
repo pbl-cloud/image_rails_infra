@@ -1,0 +1,23 @@
+default: &default
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: db/development.sqlite3
+
+test:
+  <<: *default
+  database: db/test.sqlite3
+
+production:
+  adapter: <%= @db['adapter'] %>
+  encoding: <%= @db['encoding'] %>
+  database: <%= @db['database'] %>
+  username: <%= @db['username'] %>
+  password: <%= @db['password'] %>
+  host: <%= @db['host'] %>
+  port: <%= @db['port'] %>
+  pool: <%= @db['pool'] %>
+  timeout: <%= @db['timeout'] %>

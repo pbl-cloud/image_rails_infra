@@ -1,0 +1,15 @@
+{
+  "api_key": {
+    "cipher": "aes-256-cbc",
+    "encrypted_data": "95FYVSuwZ2m9GqjLoUxDMcN4Ji8ECOgW18o9NpXIO0Vqu2YdHvwQY4UnBynorsMv",
+    "iv": "TawyLjzArAyhz2NPKbmY3Q==",
+    "version": 1
+  },
+  "api_secret": {
+    "cipher": "aes-256-cbc",
+    "encrypted_data": "EGGk9zwSEwUOSYt4Wzy4fuRwwrEjdeNvkjD16TZ826NMaZ7r4Fcux0LMDEvC3CAU6C1MYeNkc7no539v0Pq2SXDAhRQzDQA5Mo64j0d36P8=",
+    "iv": "fmeZlSZDeBf7ACjf2B9hEQ==",
+    "version": 1
+  },
+  "id": "twitter"
+}

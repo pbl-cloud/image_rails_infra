@@ -1,0 +1,15 @@
+{
+  "api_key": {
+    "cipher": "aes-256-cbc",
+    "encrypted_data": "qMk4HYPx7tu4XuoSB3H4LIwcAlUUO/Asx41LGRAUizCgH9loaAe3H0emVajrd9vs",
+    "iv": "C/9wU1zlSG7262KdRZE/YA==",
+    "version": 1
+  },
+  "api_secret": {
+    "cipher": "aes-256-cbc",
+    "encrypted_data": "F1gJXtbfDEeKNFmCZUzp11/7rONunhObMX8zwBlM6QL6rG7UWWn/wnAzubRGseV7",
+    "iv": "kj2JCGmt1UAH0T89Pl+9og==",
+    "version": 1
+  },
+  "id": "cloudinary"
+}

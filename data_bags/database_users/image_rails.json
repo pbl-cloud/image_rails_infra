@@ -1,0 +1,9 @@
+{
+  "id": "image_rails",
+  "password": {
+    "encrypted_data": "GfwFA5uictNyI14f+jXKaV0PdjGUV2EaEnOFd6u5HgFa2UG5aWjehtxwh4xk\nn6pSVB0hi8loxL7MJ7LwwCLxl7CAxs+O/NQrU+uIi2bi5L8=\n",
+    "iv": "dXaOvQjWPs/dd7M/mj7Jog==",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}
