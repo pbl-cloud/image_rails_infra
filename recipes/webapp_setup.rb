@@ -7,7 +7,6 @@ require 'securerandom'
 
 image_rails = node['image_rails']
 
-
 magic_shell_environment 'SECRET_KEY_BASE' do
   value SecureRandom.hex(50)
   owner image_rails['user']
@@ -39,5 +38,5 @@ template "local config" do
   path "#{config_directory}/settings.local.yml"
   source "settings.local.yml.erb"
   action :create_if_missing
-  variables apis: image_rails['apis']
+  variables apis: image_rails['apis'], secret_key: SecureRandom.hex(50)
 end
