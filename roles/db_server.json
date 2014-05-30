@@ -1,0 +1,5 @@
+{
+  "name": "db_server",
+  "description": "Rails database server",
+  "run_list": "image_rails::db_server"
+}

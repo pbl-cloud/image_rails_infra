@@ -1,8 +1,6 @@
 ---
 driver:
   name: vagrant
-  network:
-  - ["private_network", { ip: "192.168.33.33" }]
 
 provisioner:
   name: chef_zero
@@ -14,7 +12,16 @@ suites:
   - name: app_server
     run_list:
       - recipe[image_rails::app_server]
+    driver_config:
+      network:
+      - ["private_network", { ip: "192.168.33.33" }]
     attributes:
       image_rails:
         db:
           host: 192.168.1.8
+  - name: db_server
+    run_list:
+      - recipe[image_rails::db_server]
+    driver_config:
+      network:
+      - ["private_network", { ip: "192.168.33.34" }]
