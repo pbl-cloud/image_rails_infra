@@ -1,5 +1,5 @@
 {
   "name": "app_server",
   "description": "Rails application server",
-  "run_list": "image_rails::app_server"
+  "run_list": ["image_rails::app_server"]
 }
